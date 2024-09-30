@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 15:10:17 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/09/28 15:50:43 by cda-silv         ###   ########.fr       */
+/*   Created: 2024/09/30 09:29:06 by cda-silv          #+#    #+#             */
+/*   Updated: 2024/09/30 09:29:06 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
+#include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int i;
-
+    int var;
 	i = 0;
-	while(s[i])
+    var = 0;
+
+	while(s[i] != '\0')
 	{
 		if(s[i] == c)
-			return ((char *)&s[i]);
-		s++;
+            var = i;
+		i++;
 	}
-	return 0;
+    return ((char *)&s[var]);
 }
 int main()
 {
-	printf("%s",ft_strchr("carlos",'r'));
+	printf("%s\n",ft_strrchr("carloas",'a'));
+    printf("%s",strrchr("carloas",'a'));
 }

@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 15:10:17 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/09/28 15:50:43 by cda-silv         ###   ########.fr       */
+/*   Created: 2024/09/30 09:37:04 by cda-silv          #+#    #+#             */
+/*   Updated: 2024/09/30 09:37:04 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
+#include<string.h>
 
-char	*ft_strchr(const char *s, int c)
-{
-	int i;
-
-	i = 0;
-	while(s[i])
-	{
-		if(s[i] == c)
-			return ((char *)&s[i]);
-		s++;
-	}
-	return 0;
-}
 int main()
 {
-	printf("%s",ft_strchr("carlos",'r'));
+    char str1[] = "CarlosEduardo";
+    char str2[] = "Carlosduardo";
+    int v = 7;
+    printf("%i",strncmp(str1,str2, v));
 }

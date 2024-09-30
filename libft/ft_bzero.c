@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 15:10:17 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/09/28 15:50:43 by cda-silv         ###   ########.fr       */
+/*   Created: 2024/09/30 14:07:16 by cda-silv          #+#    #+#             */
+/*   Updated: 2024/09/30 14:07:16 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include<stdio.h>
+#include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+void ft_bzero(void *s, size_t len)
 {
-	int i;
+    size_t i;
+    i = 0;
+    char *ptr = s;
 
-	i = 0;
-	while(s[i])
-	{
-		if(s[i] == c)
-			return ((char *)&s[i]);
-		s++;
-	}
-	return 0;
+    while (i < len)
+    {
+        ptr[i] = '\0';
+        i++;
+    }
+    return s;
 }
-int main()
-{
-	printf("%s",ft_strchr("carlos",'r'));
+int main() {
+    char str[50] = "Hello World!";
+    printf("Antes: %s\n", str);
+    ft_bzero(str, 5); 
+    printf("Depois: %s\n", str); 
 }
