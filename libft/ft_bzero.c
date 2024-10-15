@@ -6,11 +6,10 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:07:16 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/09/30 14:07:16 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/14 20:39:13 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void ft_bzero(void *s, size_t len)
 {
@@ -23,11 +22,10 @@ void ft_bzero(void *s, size_t len)
         ptr[i] = '\0';
         i++;
     }
-    return s;
 }
-int main() {
+/*int main() {
     char str[50] = "Hello World!";
     printf("Antes: %s\n", str);
     ft_bzero(str, 5); 
     printf("Depois: %s\n", str); 
-}
+}*/

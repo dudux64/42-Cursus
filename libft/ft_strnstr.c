@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<string.h>
+#include "libft.h"
 
 char *ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -33,6 +32,7 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
     }
     return((char *)&big[var]);
 }
+/*
 int main() 
 {
     const char *big = "This tesis a test string.";
@@ -40,3 +40,4 @@ int main()
 
     printf("Substring encontrada: %s\n", ft_strnstr(big, little, 13));
 }
+*/

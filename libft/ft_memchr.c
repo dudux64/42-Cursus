@@ -9,8 +9,7 @@
 /*   Updated: 2024/10/05 13:28:29 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdlib.h>
-#include<stdio.h>
+#include "libft.h"
 
 void *ft_memchr(const void *str, int c, size_t n)
 {
@@ -27,7 +26,7 @@ void *ft_memchr(const void *str, int c, size_t n)
 	}
 	return (0);
 }
-
+/*
 int main() {
     const char str[] = "Hello, World!";
     char ch = '0';
@@ -36,4 +35,5 @@ int main() {
     printf("Encontrado %s",(char *)ft_memchr(str,ch,n));
     return 0;
 }
+*/
 

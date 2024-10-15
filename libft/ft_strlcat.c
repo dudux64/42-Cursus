@@ -10,21 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<string.h>
-
-size_t  ft_strlen(char *src)
-{
-    int i = 0;
-    while (src[i])
-        i++;
-    return (i);
-}
+#include "libft.h"
 
 size_t ft_strlcat(char *dest, const char *src, size_t size)
 {
-    int i;
-    int j;
+    size_t i;
+    size_t j;
     j = 0;
     i = 0;
 
@@ -39,7 +30,7 @@ size_t ft_strlcat(char *dest, const char *src, size_t size)
     dest[i] = '\0';
     return (ft_strlen(dest));
 }
-
+/*
 int main() {
     char dest[20] = "Hello, ";
     const char *src = "World!";
@@ -48,3 +39,4 @@ int main() {
     printf("Resultado: %s\n", dest);
     return 0;
 }
+*/

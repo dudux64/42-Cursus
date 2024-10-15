@@ -9,8 +9,7 @@
 /*   Updated: 2024/09/28 12:04:04 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<ctype.h>
-#include<stdio.h>
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
@@ -19,8 +18,10 @@ int	ft_isprint(int c)
 	else
 			return (0);
 }
+/*
 int main()
 {
 	printf("%i\n",ft_isprint(' '));
 	printf("%i",isprint(' '));
 }
+*/

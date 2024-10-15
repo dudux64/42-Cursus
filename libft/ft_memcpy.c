@@ -9,7 +9,7 @@
 /*   Updated: 2024/10/05 10:55:04 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
+#include "libft.h"
 
 void *ft_memcpy(void *dest, const void *src,size_t n)
 {
@@ -24,7 +24,7 @@ void *ft_memcpy(void *dest, const void *src,size_t n)
 	}
 	return ((void *)ptr);
 }
-
+/*
 int main()
 {
 	char dest[6];
@@ -32,5 +32,6 @@ int main()
 	size_t n = 6;
 	printf("%s",(char *)ft_memcpy(dest,src,n));	
 }
+*/
 
 

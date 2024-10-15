@@ -9,7 +9,7 @@
 /*   Updated: 2024/09/28 14:32:29 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
+#include "libft.h"
 
 int	ft_toupper(int ch)
 {
@@ -18,7 +18,9 @@ int	ft_toupper(int ch)
 	else
 		return (ch);
 }
+/*
 int main()
 {
 	printf("%c",ft_toupper('9'));
 }
+*/

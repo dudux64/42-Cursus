@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void *ft_memset(void *dest, int c, size_t count)
 {
@@ -26,9 +25,11 @@ void *ft_memset(void *dest, int c, size_t count)
     }
     return dest;
 }
+/*
 int main() {
     char str[50] = "Hello World!";
     printf("Antes: %s\n", str);
     ft_memset(str, '*', 5); 
     printf("Depois: %s\n", str); 
 }
+*/
