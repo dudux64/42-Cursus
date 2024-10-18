@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 13:27:03 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/17 20:02:18 by cda-silv         ###   ########.fr       */
+/*   Created: 2024/10/17 20:20:23 by cda-silv          #+#    #+#             */
+/*   Updated: 2024/10/17 21:21:43 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
-{	
-	size_t i;
-
-	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (size > 0)
-	{
-		dst[i] = src[i];
-		i++;
-		size--;
-	}
-	dst[i] = '\0';
-	return (i);
+void ft_striteri(char *s, void (*f)(unsigned int,char*))
+{
+    unsigned int i;
+    i = 0;
+    if (s == NULL || f == NULL)
+        return;
+    while(s[i])
+    {
+        f(i,&s[i]);
+        i++;
+    }
 }
 /*
+void	ft_toupper(unsigned int a, char *ch)
+{
+    printf("%d\n",a);
+	if(*ch >= 97 && *ch <= 122)
+		*ch -= 32;
+}
 int main()
 {
-	char src[] = "carlos";
-	char dst[] = "";
-	size_t size;
+    char s[]= "carlos";
+    ft_striteri(s, &ft_toupper);
+    printf("%s",s);
 
-	size = 0;
-	printf("%s\n",src);
-	printf("%ld",ft_strlcpy(dst,src,size));
 }
 */

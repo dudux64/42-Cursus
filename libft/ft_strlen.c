@@ -6,14 +6,15 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 13:20:27 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/09/28 13:24:31 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/17 20:01:34 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_strlen(const char *c)
+size_t	ft_strlen(const char *c)
 {
-	int i;
+	size_t i;
 	i = 0;
 
 	while(c[i] != '\0')

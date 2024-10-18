@@ -6,10 +6,10 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 08:25:24 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/17 08:25:24 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/17 18:53:38 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 void ft_putnbr_fd(int n, int fd)
 {
@@ -28,7 +28,7 @@ void ft_putnbr_fd(int n, int fd)
 		}
 		if (n >= 10)
 		{
-			ft_putnbr(n / 10);
+			ft_putnbr_fd(n / 10, fd);
 			n %= 10;
 		}
 		n_char = n + '0';

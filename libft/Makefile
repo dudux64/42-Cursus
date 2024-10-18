@@ -6,7 +6,7 @@
 #    By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/05 14:32:35 by cda-silv          #+#    #+#              #
-#    Updated: 2024/10/14 20:28:48 by cda-silv         ###   ########.fr        #
+#    Updated: 2024/10/17 21:21:15 by cda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,9 @@ SOURCE = ft_isalpha.c \
           ft_strnstr.c \
           ft_atoi.c \
           ft_calloc.c \
-          ft_strdup.c 
+          ft_strdup.c \
+          ft_substr.c \
+          ft_striteri.c
 
 CC = cc -Wall -Wextra -Werror
 

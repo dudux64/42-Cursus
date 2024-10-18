@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 14:08:53 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/14 20:12:24 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/17 21:20:57 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memset(void *dest, int c, size_t count);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-int	ft_strlen(const char *c);
+size_t	ft_strlen(const char *c);
 int	ft_strncmp(const char *str1, const char *str2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
@@ -37,4 +37,6 @@ int	ft_tolower(int c);
 int	ft_toupper(int ch);
 void    *ft_calloc(size_t count, size_t size);
 char    *ft_strdup(const char *s1);
+char    *ft_substr(char const *s, unsigned int start, size_t len);
+void ft_striteri(char *s, void (*f)(unsigned int,char*));
 #endif
