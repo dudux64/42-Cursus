@@ -25,17 +25,16 @@ void ft_striteri(char *s, void (*f)(unsigned int,char*))
     }
 }
 /*
-void	ft_toupper(unsigned int a, char *ch)
+void ft_toupper(unsigned int a, char *ch)
 {
-    printf("%d\n",a);
-	if(*ch >= 97 && *ch <= 122)
-		*ch -= 32;
+    printf("%d\n", a); // Exibe o índice do caractere
+    if (*ch >= 97 && *ch <= 122) // Verifica se é uma letra minúscula
+        *ch -= 32; // Converte para maiúscula
 }
 int main()
 {
-    char s[]= "carlos";
+    char s[] = "carlos";
     ft_striteri(s, &ft_toupper);
-    printf("%s",s);
-
+    printf("%s\n", s); // Esperado: "Carlos"
 }
 */
