@@ -6,12 +6,11 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 08:25:24 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/17 18:53:38 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:09:51 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	n_char;
 	char	neg;

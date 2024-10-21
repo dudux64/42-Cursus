@@ -6,19 +6,19 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 14:38:03 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/09/28 14:41:49 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:14:19 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if(c >= 65 && c <= 90)
+	if (c >= 65 && c <= 90)
 		return (c + 32);
 	else
 		return (c);
 }
 /*
-int main()
+int	main(void)
 {
 	printf("%c",ft_tolower('M'));
 }

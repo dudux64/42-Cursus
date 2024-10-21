@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 11:31:34 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/09/28 11:35:53 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 13:58:58 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_isalnum(int c)
 		return (0);
 }
 /*
-int main()
+int	main(void)
 {
 	printf("%i\n",ft_isalnum('a'));
 	printf("%i\n",isalnum('a'));

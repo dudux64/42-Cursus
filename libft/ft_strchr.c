@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:10:17 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/09/28 15:50:43 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:10:57 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
-		if(s[i] == c)
+		if (s[i] == c)
 			return ((char *)&s[i]);
 		s++;
 	}
-	return 0;
+	return (0);
 }
 /*
-int main()
+int	main(void)
 {
 	printf("%s",ft_strchr("carlos",'r'));
 }

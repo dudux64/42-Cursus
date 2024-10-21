@@ -6,15 +6,15 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 13:27:03 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/17 20:02:18 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:12:37 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
-{	
-	size_t i;
+{
+	size_t	i;
 
 	i = 0;
 	if (size == 0)
@@ -29,11 +29,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (i);
 }
 /*
-int main()
+int	main(void)
 {
-	char src[] = "carlos";
-	char dst[] = "";
-	size_t size;
+	char	src[] = "carlos";
+	char	dst[] = "";
+	size_t	size;
 
 	size = 0;
 	printf("%s\n",src);

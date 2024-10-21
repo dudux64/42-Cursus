@@ -6,13 +6,13 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 07:56:44 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/17 07:56:44 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:08:55 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void ft_putchar_fd(char *s, int fd)
-{
-    write(fd, &s, 1);
-}
 
+void	ft_putchar_fd(char *s, int fd)
+{
+	write(fd, &s, 1);
+}

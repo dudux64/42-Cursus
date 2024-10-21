@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isaplha.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 10:44:20 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/09/28 11:05:34 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 13:59:37 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if (c >= 65 && c <= 90)
 		return (1);
@@ -22,12 +22,12 @@ int ft_isalpha(int c)
 		return (0);
 }
 /*
-int main()
+int	main(void)
 {
-	int a;
+	int	a;
+
 	a = 'c';
 //	printf("%i",ft_isalpha(a));
 	printf("%i",isalpha(a));
 }
 */
-

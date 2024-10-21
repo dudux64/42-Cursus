@@ -6,14 +6,14 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 08:23:01 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/17 08:23:01 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:09:18 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-    write(fd, s, ft_strlen(s));
-    write(fd, "\n", 1);
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }

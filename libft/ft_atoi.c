@@ -6,11 +6,9 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:24:29 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/05 15:39:22 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 13:45:18 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
-
 
 int	ft_atoi(const char *str)
 {
