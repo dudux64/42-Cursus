@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 07:56:44 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/21 14:08:55 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:32:46 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char *s, int fd)
+void	ft_putchar_fd(const char c, int fd)
 {
-	write(fd, &s, 1);
+	write(fd, &c, 1);
 }

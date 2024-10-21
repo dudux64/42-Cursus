@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 13:27:03 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/21 14:12:37 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:50:45 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	if (size == 0)
 		return (ft_strlen(src));
-	while (size > 0)
+	while (i < (size - 1) && src[i] != 0)
 	{
 		dst[i] = src[i];
 		i++;
-		size--;
 	}
 	dst[i] = '\0';
-	return (i);
+	return (ft_strlen(src));
 }
 /*
 int	main(void)

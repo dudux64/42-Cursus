@@ -6,9 +6,11 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 08:25:24 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/21 14:09:51 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:32:42 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -17,7 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 
 	neg = '-';
 	if (n == -2147483648)
-		write(1, "-2147483648", 11);
+		write(fd, "-2147483648", 11);
 	if (n > -2147483648 && n <= 2147483647)
 	{
 		if (n < 0)

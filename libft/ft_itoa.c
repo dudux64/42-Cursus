@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 14:44:09 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/21 15:13:56 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:35:19 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ void	ft_revert(char *str)
 		j--;
 	}
 }
+
 char	*ft_itoa(int n)
 {
 	int		i;
-	int		sign;
 	char	*res;
 
 	if (n == -2147483648)
@@ -65,7 +65,7 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 		n *= -1;
 	}
-	res[i] = '\0'; 
+	res[i] = '\0';
 	while (n)
 	{
 		res[i--] = (n % 10) + '0';
@@ -73,6 +73,7 @@ char	*ft_itoa(int n)
 	}
 	return (res);
 }
+
 /*
 int	main(void)
 {

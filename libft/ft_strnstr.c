@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 10:01:49 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/21 14:14:06 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:56:25 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,26 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	int		var;
+	char	*s_big;
+	char	*s_lit;
 
-	var = 0;
 	i = 0;
-	j = 0;
-	if (little[0] == '\0')
-		return ((char *)big);
-	while (big[i] != '\0' && i <= len)
+	s_big = (char *)big;
+	s_lit = (char *)little;
+	if (s_lit[0] == 0)
+		return (s_big);
+	while (s_big[i] != 0 && i < len)
 	{
-		if (big[i] == little[j])
+		j = 0;
+		while (big[i + j] == little[j] && (i + j) < len)
 		{
-			var = i;
+			j++;
+			if (little[j] == 0)
+				return (s_big + i);
 		}
 		i++;
 	}
-	return ((char *)&big[var]);
+	return (0);
 }
 /*
 int	main(void)

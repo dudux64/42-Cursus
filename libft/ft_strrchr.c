@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 09:29:06 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/21 14:14:12 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:32:02 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
-	int	var;
+	unsigned char	*str;
+	unsigned char	chr;
 
-	i = 0;
-	var = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			var = i;
-		i++;
-	}
-	return ((char *)&s[var]);
+	str = (unsigned char *)s;
+	chr = (unsigned char)c;
+	while (*str != 0)
+		str++;
+	while (*str != chr && str != (unsigned char *)s)
+		str--;
+	if (*str == chr)
+		return ((char *)str);
+	return (0);
 }
 /*
 int	main(void)

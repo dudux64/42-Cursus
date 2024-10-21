@@ -6,31 +6,33 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:24:29 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/21 13:45:18 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:57:18 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
-	int	neg;
-	int	resultado;
+	int	n;
+	int	signal;
 
+	if (nptr == 0)
+		return (0);
 	i = 0;
-	resultado = 0;
-	neg = 1;
-	while (str[i] <= 32)
+	n = 0;
+	signal = 1;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
-	if (str[i] == '-')
-		neg *= -1;
-	i++;
-	while (str[i])
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if ((str[i] >= 48) && (str[i] <= 57))
-			resultado = resultado * 10 + (str[i] - '0');
-		else
-			break ;
+		if (nptr[i] == '-')
+			signal = -1;
 		i++;
 	}
-	return (resultado * neg);
+	while (nptr[i] >= 48 && nptr[i] <= 57)
+	{
+		n = (n * 10) + nptr[i] - 48;
+		i++;
+	}
+	return (n * signal);
 }
