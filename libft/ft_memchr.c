@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:10:23 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/21 17:32:56 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/26 10:47:21 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(void) {
 	char ch = '0';
 	size_t n = 9;
 
-	printf("Encontrado %s",(char *)ft_memchr(str,ch,n));
+	printf(" %s",(char *)ft_memchr(str,ch,n));
 	return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 20:20:23 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/26 10:15:33 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/26 11:05:19 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 /*
 void	ft_toupper(unsigned int a, char *ch)
 {
-	printf("%d\n", a); // Exibe o índice do caractere
-	if (*ch >= 97 && *ch <= 122) // Verifica se é uma letra minúscula
-		*ch -= 32; // Converte para maiúscula
+	printf("%d\n", a); 
+	if (*ch >= 97 && *ch <= 122) 
+		*ch -= 32; 
 }
 int	main(void)
 {
