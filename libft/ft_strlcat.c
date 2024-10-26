@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 10:57:22 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/21 17:53:16 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/26 10:15:34 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	main(void) {
 	char dest[20] = "Hello, ";
 	const char *src = "World!";
 
-	printf("Resultado: %ld\n", ft_strlcat(dest, src, 20));
-	printf("Resultado: %s\n", dest);
+	printf("%ld\n", ft_strlcat(dest, src, 20));
+	printf("%s\n", dest);
 	return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 10:01:49 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/21 17:56:25 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/26 10:15:43 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ int	main(void)
 	const char	*big = "This tesis a test string.";
 	const char	*little = "test";
 
-	printf("Substring encontrada: %s\n", ft_strnstr(big, little, 13));
+	printf("%s\n", ft_strnstr(big, little, 13));
 }
 */

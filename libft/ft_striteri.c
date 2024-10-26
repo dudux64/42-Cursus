@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 20:20:23 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/21 14:11:33 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/26 10:15:33 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ int	main(void)
 	char	s[] = "carlos";
 
 	ft_striteri(s, &ft_toupper);
-	printf("%s\n", s); // Esperado: "Carlos"
+	printf("%s\n", s); "Carlos"
 }
 */

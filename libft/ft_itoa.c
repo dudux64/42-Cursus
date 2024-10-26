@@ -6,13 +6,13 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 14:44:09 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/10/21 17:35:19 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/10/26 10:37:25 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_countint(int n)
+static int	ft_countint(int n)
 {
 	int	count;
 
@@ -27,24 +27,6 @@ int	ft_countint(int n)
 		count++;
 	}
 	return (count);
-}
-
-void	ft_revert(char *str)
-{
-	int		i;
-	int		j;
-	char	temp;
-
-	i = 0;
-	j = ft_strlen(str) - 1;
-	while (i < j)
-	{
-		temp = str[i];
-		str[i] = str[j];
-		str[j] = temp;
-		i++;
-		j--;
-	}
 }
 
 char	*ft_itoa(int n)
@@ -68,7 +50,7 @@ char	*ft_itoa(int n)
 	res[i] = '\0';
 	while (n)
 	{
-		res[i--] = (n % 10) + '0';
+		res[--i] = (n % 10) + '0';
 		n /= 10;
 	}
 	return (res);

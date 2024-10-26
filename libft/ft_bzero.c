@@ -27,7 +27,7 @@ void	ft_bzero(void *s, size_t len)
 }
 /*int main() {
 	char str[50] = "Hello World!";
-	printf("Antes: %s\n", str);
+	printf("%s\n", str);
 	ft_bzero(str, 5);
-	printf("Depois: %s\n", str);
+	printf("%s\n", str);
 }*/
