@@ -6,7 +6,7 @@
 #    By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/05 14:32:35 by cda-silv          #+#    #+#              #
-#    Updated: 2024/10/26 10:43:30 by cda-silv         ###   ########.fr        #
+#    Updated: 2024/10/26 13:26:12 by cda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,12 +66,5 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
-
-run: re
-	$(CC) main.c -L. -lft -lbsd
-	./a.out
-
-norm:
-	norminette -R CheckForbiddenSourceHeader $(SOURCE)
 
 
