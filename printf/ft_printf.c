@@ -25,13 +25,13 @@ static int get_arg(va_list *ap, char c)
     if(c == 'u')
         n = ft_put_u(va_arg(*ap,int));
     if(c == 'x')
-        n = ft_putnbr_hex(va_arg(*ap,int));
+        n = ft_putnbr_hex(va_arg(*ap,unsigned long), 'x');
     if(c == 'X')
-        n = ft_putnbr_hex(va_arg(*ap,int));
+        n = ft_putnbr_hex(va_arg(*ap,unsigned long), 'X');
     if(c == '%')
         n = ft_putchar('%');
     if(c == 'p')
-        n = ft_putnbr_pont(va_arg(*ap,int));
+        n = ft_putnbr_pont(va_arg(*ap,long));
     return (n);
 }
 int ft_printf(const char *str, ...)
