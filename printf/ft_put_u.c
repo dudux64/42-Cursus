@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_put_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 15:17:42 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/11/02 15:52:05 by cda-silv         ###   ########.fr       */
+/*   Created: 2024/11/07 21:34:23 by cda-silv          #+#    #+#             */
+/*   Updated: 2024/11/07 21:34:23 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <unistd.h>
-# include <stdarg.h>
-
-int ft_printf(const char *str, ...);
-int	ft_putchar(const char str);
-int	ft_putstr(const char *str);
-int	ft_putnbr(int n);
-int	ft_putunsnbr(unsigned int n);
-int ft_putnbr_hex(unsigned int numb);
-unsigned int ft_put_u(int n);
-int ft_putnbr_pont(long int n);
-#endif
+unsigned int ft_put_u(int n)
+{
+    int i;
+    if(n < 0)
+        i = ft_putnbr(4294967296 + n);
+    else
+        i = ft_putnbr(n);
+    return (i);
+}

@@ -3,7 +3,10 @@ NAME = libftprintf.a
 SOURCE = ft_putchar.c\
 			ft_putnbr.c\
 			ft_putstr.c\
-			ft_putunsnbr.c
+			ft_putunsnbr.c\
+			ft_putnbr_hex.c\
+			ft_put_u.c\
+			ft_putnbr_pont.c
          
 CC = cc -Wall -Wextra -Werror
 
