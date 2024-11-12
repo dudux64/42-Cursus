@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putnbr_hex_lower.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 15:17:42 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/11/02 15:52:05 by cda-silv         ###   ########.fr       */
+/*   Created: 2024/11/11 21:47:15 by cda-silv          #+#    #+#             */
+/*   Updated: 2024/11/11 21:55:17 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <unistd.h>
-# include <stdarg.h>
+#include "ft_printf.h"
 
-int ft_printf(const char *str, ...);
-int	ft_putchar(const char str);
-int	ft_putstr(const char *str);
-int	ft_putnbr(int n);
-int	ft_putunsnbr(unsigned int n);
-int ft_putnbr_hex(unsigned int numb);
-unsigned int ft_put_u(int n);
-int ft_putnbr_pont(long int n);
-#endif
+int	ft_putnbr_hex_lower(unsigned int numb)
+{
+	int	cont;
+
+	cont = 0;
+	if (numb > 15)
+		ft_putnbr_hex_lower(numb / 16);
+	cont += ft_putchar("0123456789abcdef"[numb % 16]);
+	return (cont);
+}

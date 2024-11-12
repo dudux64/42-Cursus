@@ -6,9 +6,11 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 14:56:08 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/11/02 15:51:45 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/11/11 19:33:38 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# include "ft_printf.h"
 
 static int	ft_countint(int n)
 {

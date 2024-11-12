@@ -6,9 +6,11 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 13:28:38 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/11/02 15:16:17 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/11/11 19:33:43 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# include "ft_printf.h"
 
 int	ft_putchar(const char str)
 {

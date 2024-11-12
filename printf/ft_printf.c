@@ -6,11 +6,11 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 13:25:55 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/11/02 15:18:15 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/11/11 21:46:11 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+# include "ft_printf.h"
 
 static int get_arg(va_list *ap, char c)
 {
@@ -25,9 +25,9 @@ static int get_arg(va_list *ap, char c)
     if(c == 'u')
         n = ft_put_u(va_arg(*ap,int));
     if(c == 'x')
-        n = ft_putnbr_hex(va_arg(*ap,unsigned long), 'x');
+        n = ft_putnbr_hex_lower(va_arg(*ap,unsigned long));
     if(c == 'X')
-        n = ft_putnbr_hex(va_arg(*ap,unsigned long), 'X');
+        n = ft_putnbr_hex_upper(va_arg(*ap,unsigned long));
     if(c == '%')
         n = ft_putchar('%');
     if(c == 'p')

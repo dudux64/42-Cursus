@@ -6,9 +6,11 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 14:50:11 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/11/02 15:41:31 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/11/11 20:38:20 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# include "ft_printf.h"
 
 static int	ft_countint(int n)
 {
@@ -26,29 +28,28 @@ static int	ft_countint(int n)
 	}
 	return (count);
 }
-
 int	ft_putnbr(int n)
 {
 	char	n_char;
-	char	neg;
+	int cont = ft_countint(n);
 
-	neg = '-';
-	if (n == -2147483648)
-		write(1, "-2147483648", 11);
+    if (n == -2147483648)
+	{
+        ft_putstr("-2147483648");
+	}
 	if (n > -2147483648 && n <= 2147483647)
 	{
 		if (n < 0)
 		{
-			write(1, &neg, 1);
+			ft_putchar('-');
 			n *= -1;
 		}
 		if (n >= 10)
 		{
 			ft_putnbr(n / 10);
-			n %= 10;
 		}
-		n_char = n + '0';
-		write(1, &n_char, 1);
+		n_char = n % 10 + '0';
+		ft_putchar(n_char);
 	}
-	return (ft_countint(n));
+	return (cont);
 }

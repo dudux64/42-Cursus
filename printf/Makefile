@@ -4,9 +4,11 @@ SOURCE = ft_putchar.c\
 			ft_putnbr.c\
 			ft_putstr.c\
 			ft_putunsnbr.c\
-			ft_putnbr_hex.c\
+			ft_putnbr_hex_upper.c\
+			ft_putnbr_hex_lower.c\
 			ft_put_u.c\
-			ft_putnbr_pont.c
+			ft_putnbr_pont.c\
+			ft_printf.c
          
 CC = cc -Wall -Wextra -Werror
 
