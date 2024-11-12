@@ -12,13 +12,22 @@
 
 #include "ft_printf.h"
 
+static int	get_len(unsigned long n)
+{
+	int	len;
+
+	len = 1;
+	while (n > 15)
+	{
+		n /= 16;
+		len++;
+	}
+	return (len);
+}
 int	ft_putnbr_hex_upper(unsigned int numb)
 {
-	int	cont;
-
-	cont = 0;
 	if (numb > 15)
-		ft_putnbr_hex_upper(numb / 16);
-	cont += ft_putchar("0123456789ABCEF"[numb % 16]);
-	return (cont);
+		ft_putnbr_hex_lower(numb / 16);
+		ft_putchar("0123456789abcdef"[numb % 16]);
+	return (get_len(numb));
 }
