@@ -3,7 +3,6 @@ NAME = libftprintf.a
 SOURCE = ft_putchar.c\
 			ft_putnbr.c\
 			ft_putstr.c\
-			ft_putunsnbr.c\
 			ft_putnbr_hex_upper.c\
 			ft_putnbr_hex_lower.c\
 			ft_put_u.c\

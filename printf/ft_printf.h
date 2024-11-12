@@ -19,7 +19,6 @@ int ft_printf(const char *str, ...);
 int	ft_putchar(const char str);
 int	ft_putstr(char *str);
 int	ft_putnbr(int n);
-int	ft_putunsnbr(unsigned int n);
 int	ft_putnbr_hex_lower(unsigned int numb);
 int	ft_putnbr_hex_upper(unsigned int numb);
 int ft_put_u(unsigned int n);
