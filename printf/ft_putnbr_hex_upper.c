@@ -24,10 +24,18 @@ static int	get_len(unsigned long n)
 	}
 	return (len);
 }
+
 int	ft_putnbr_hex_upper(unsigned int numb)
 {
+	int	len;
+
+	len = get_len(numb);
 	if (numb > 15)
-		ft_putnbr_hex_lower(numb / 16);
-		ft_putchar("0123456789abcdef"[numb % 16]);
-	return (get_len(numb));
+	{
+		ft_putnbr_hex_upper(numb / 16);
+		ft_putchar("0123456789ABCDEF"[numb % 16]);
+	}
+	else
+		ft_putchar("0123456789ABCDEF"[numb % 16]);
+	return (len);
 }

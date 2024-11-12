@@ -26,8 +26,15 @@ static int	get_len(unsigned long n)
 }
 int	ft_putnbr_hex_lower(unsigned int numb)
 {
+	int	len;
+
+	len = get_len(numb);
 	if (numb > 15)
+	{
 		ft_putnbr_hex_lower(numb / 16);
+		ft_putchar("0123456789abcef"[numb % 16]);
+	}
+	else
 		ft_putchar("0123456789abcdef"[numb % 16]);
-	return (get_len(numb));
+	return (len);
 }
