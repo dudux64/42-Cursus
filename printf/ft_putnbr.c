@@ -6,11 +6,11 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 14:50:11 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/11/11 20:38:20 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/11/13 23:42:34 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
+#include "ft_printf.h"
 
 static int	ft_countint(int n)
 {
@@ -28,14 +28,16 @@ static int	ft_countint(int n)
 	}
 	return (count);
 }
+
 int	ft_putnbr(int n)
 {
 	char	n_char;
-	int cont = ft_countint(n);
+	int		cont;
 
-    if (n == -2147483648)
+	cont = ft_countint(n);
+	if (n == -2147483648)
 	{
-        ft_putstr("-2147483648");
+		ft_putstr("-2147483648");
 	}
 	if (n > -2147483648 && n <= 2147483647)
 	{
