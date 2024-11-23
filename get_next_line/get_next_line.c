@@ -6,15 +6,21 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:05:33 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/11/22 20:39:04 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/11/23 15:10:05 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>  // Para open()
-#include <unistd.h>
+#include "get_next_line.h"
 
+char *char_to_string(char c)
+{
+    char *str = (char *)malloc(2 * sizeof(char)); 
+    if (!str) {
+        return NULL;
+    }
+    str[0] = c;  
+    return str; 
+}
 char	*ft_strchr(char *s, int c)
 {
 	size_t			i;
@@ -33,43 +39,35 @@ char	*ft_strchr(char *s, int c)
 	}
 	return (0);
 }
-char *get_next_line(int fd) {
-    static char buffer[BUFFER_SIZE + 1];
+char    *get_next_line(int fd) 
+{
+    static char *buffer;
+    char temp[BUFFER_SIZE + 1];
     char *line;
-    ssize_t bytes_read;
 	int i;
-	char *a;
-
 	i = -1;
     if (fd < 0 || BUFFER_SIZE < 1)
         return NULL;
-
-    bytes_read = read(fd, buffer, BUFFER_SIZE);
-    if (bytes_read <= 0)
-        return NULL;
-    line = malloc(bytes_read + 1);
-	while(i++ < bytes_read && buffer[i] != '\n')
-		line[i]= buffer[i];
-	a = ft_strchr(buffer,'\n');
-	printf("%s",a);
+    read(fd, temp, BUFFER_SIZE);
+    temp[BUFFER_SIZE + 1] = '\0'; 
+    line = malloc(BUFFER_SIZE + 1);
+    if (buffer == NULL)
+        buffer = char_to_string('\0');
+    line = ft_strjoin(buffer,temp);
+	while(i++ < BUFFER_SIZE && temp[i] != '\n')
+		line[i]= temp[i];
+	buffer = ft_strchr(temp,'\n');
     return line;
-
 }
 
+#include <fcntl.h>
 int main() 
 {
     const char *filePath = "exemplo.txt";
     int fd = open(filePath, O_RDONLY);
-    if (fd == -1) {
-        perror("Erro ao abrir o arquivo");
-        return 1;
-    }
     char *line = get_next_line(fd);
-    while (line) {
-        printf("%s\n", line);
-        free(line);
-        line = get_next_line(fd);
-    }
+    printf("%s", line);
+    free(line);
     close(fd);
     return 0;
 }
