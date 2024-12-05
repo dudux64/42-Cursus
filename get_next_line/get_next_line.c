@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:05:33 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/12/04 20:54:27 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/12/05 01:26:59 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,20 @@ char    *get_next_line(int fd)
     static char *buffer;
     char temp[BUFFER_SIZE + 1];
     char *line;
-    int read_line;
 	int i;
+    
 	i = -1;
     if (fd < 0 || BUFFER_SIZE < 1)
         return NULL;
-    read_line = read(fd, temp, BUFFER_SIZE);
+    read(fd, temp, BUFFER_SIZE);
     line = malloc(BUFFER_SIZE + 1);
     if (buffer == NULL)
         buffer = char_to_string('\0');
     buffer = ft_strjoin(buffer,temp);
-	while(i++ < BUFFER_SIZE && temp[i] != '\n')
-		line[i]= temp[i];
-	buffer = ft_strchr(temp,'\n');
-    return line;
+	while(i++ < BUFFER_SIZE && buffer[i] != '\n')
+		line[i]= buffer[i];
+	buffer = ft_strchr(buffer,'\n');
+    return (line);
 }
 
 #include <fcntl.h>
@@ -67,10 +67,14 @@ int main()
     int fd = open(filePath, O_RDONLY);
     char *line = get_next_line(fd);
     char *line2 = get_next_line(fd);
-    printf("%s", line);
-    printf("%s", line2);
+    char *line3 = get_next_line(fd);
+    char *line4 = get_next_line(fd);
+    printf("%s\n", line);
+    printf("%s\n", line2);
+    printf("%s\n", line3);
+    printf("%s",  line4);
     free(line2);
-     free(line);
+    free(line);
     close(fd);
     return 0;
 }
