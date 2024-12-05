@@ -1,5 +1,4 @@
-Olá carlos eu sou lindo
-Ola Paloma
-Alo
-Trhre
-aaaaaaaaaaaaaaa
+Ola carlos eu sou lindo
+Ola dudu 
+Alo\n
+hello world

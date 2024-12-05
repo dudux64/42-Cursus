@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 12:57:35 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/11/23 14:21:26 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/12/04 21:00:05 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdio.h>   
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 10
 # endif
 
 char    *get_next_line(int fd);

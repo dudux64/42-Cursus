@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:05:33 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/11/23 15:10:05 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/12/04 20:54:27 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,16 @@ char    *get_next_line(int fd)
     static char *buffer;
     char temp[BUFFER_SIZE + 1];
     char *line;
+    int read_line;
 	int i;
 	i = -1;
     if (fd < 0 || BUFFER_SIZE < 1)
         return NULL;
-    read(fd, temp, BUFFER_SIZE);
-    temp[BUFFER_SIZE + 1] = '\0'; 
+    read_line = read(fd, temp, BUFFER_SIZE);
     line = malloc(BUFFER_SIZE + 1);
     if (buffer == NULL)
         buffer = char_to_string('\0');
-    line = ft_strjoin(buffer,temp);
+    buffer = ft_strjoin(buffer,temp);
 	while(i++ < BUFFER_SIZE && temp[i] != '\n')
 		line[i]= temp[i];
 	buffer = ft_strchr(temp,'\n');
@@ -66,8 +66,11 @@ int main()
     const char *filePath = "exemplo.txt";
     int fd = open(filePath, O_RDONLY);
     char *line = get_next_line(fd);
+    char *line2 = get_next_line(fd);
     printf("%s", line);
-    free(line);
+    printf("%s", line2);
+    free(line2);
+     free(line);
     close(fd);
     return 0;
 }
