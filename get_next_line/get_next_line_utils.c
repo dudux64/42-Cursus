@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 12:53:27 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/12/05 01:27:26 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/12/05 21:20:59 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ size_t	ft_strlen(const char *c)
         i++;
     return (i);
 }
+
 
 char	*ft_strjoin(char *s1, char *s2)
 {
