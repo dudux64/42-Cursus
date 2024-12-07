@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:05:33 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/12/07 15:24:30 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/12/07 16:24:20 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,31 +65,33 @@ char    *get_next_line(int fd)
     static char *buffer;
     char temp[BUFFER_SIZE + 1];
     char *line;
-	int i;
+	size_t i;
     int a;
     int bytes_read;
 
-	i = -1;
+	i = 0;
     a = 0;
     bytes_read = 0;
     if (fd <= 0 || BUFFER_SIZE < 1)
         return NULL;
     while(0 == a)
     {
-        bytes_read += read(fd, temp, BUFFER_SIZE);
-	if (bytes_read == 0)
-		return(buffer);
+        bytes_read += read(fd, temp, BUFFER_SIZE);   
         if (buffer == NULL)
             buffer = char_to_string('\0');
         buffer = ft_strjoin(buffer,temp);
         a = line_bytes(buffer,'\n');
     }
-    line = malloc(bytes_read + 1);
-	while(i++ < bytes_read && buffer[i] != '\n')
+    line = malloc(ft_strlen(buffer)+ 1);
+	while(i < ft_strlen(buffer) && buffer[i] != '\n')
+    {
 		line[i]= buffer[i];
+        i++;
+    }
 	buffer = ft_strchr(buffer,'\n');
     return (line);
 }
+
 #include <fcntl.h>
 int main() 
 {
@@ -99,12 +101,39 @@ int main()
     char *line2 = get_next_line(fd);
     char *line3 = get_next_line(fd);
     char *line4 = get_next_line(fd);
+    char *line5 = get_next_line(fd);
+    char *line6 = get_next_line(fd);
+    char *line7 = get_next_line(fd);
+    char *line8 = get_next_line(fd);
+    char *line9 = get_next_line(fd);
+    char *line10 = get_next_line(fd);
+    char *line11 = get_next_line(fd);
+    char *line12 = get_next_line(fd);
     printf("%s\n", line);
     printf("%s\n", line2);
     printf("%s\n", line3);
-    printf("%s",  line4);
-    free(line2);
+    printf("%s\n", line4);
+    printf("%s\n", line5);
+    printf("%s\n", line6);
+    printf("%s\n", line7);
+    printf("%s\n", line8);
+    printf("%s\n", line9);
+    printf("%s\n", line10);
+    printf("%s\n", line11);
+    printf("%s\n", line12);
     free(line);
+    free(line2);
+    free(line3);
+    free(line4);
+    free(line5);
+    free(line6);
+    free(line7);
+    free(line8);
+    free(line9);
+    free(line10);
+    free(line11);
+    free(line12);
     close(fd);
     return 0;
 }
+
