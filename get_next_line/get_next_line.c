@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:05:33 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/12/05 01:26:59 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/12/07 15:24:30 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,27 +39,57 @@ char	*ft_strchr(char *s, int c)
 	}
 	return (0);
 }
+int	line_bytes(char *s, int c)
+{
+	size_t			i;
+	unsigned char	*str;
+	unsigned char	chr;
+
+	i = 0;
+    if (s == NULL)
+        	return (0);
+	str = (unsigned char *)s;
+	chr = (unsigned char)c;
+	while (str[i] != chr && str[i] != 0)
+		str++;
+	if (str[i] == chr)
+	{
+		str++;
+		return (1);
+	}
+	return (0);
+}
+
 char    *get_next_line(int fd) 
 {
     static char *buffer;
     char temp[BUFFER_SIZE + 1];
     char *line;
 	int i;
-    
+    int a;
+    int bytes_read;
+
 	i = -1;
-    if (fd < 0 || BUFFER_SIZE < 1)
+    a = 0;
+    bytes_read = 0;
+    if (fd <= 0 || BUFFER_SIZE < 1)
         return NULL;
-    read(fd, temp, BUFFER_SIZE);
-    line = malloc(BUFFER_SIZE + 1);
-    if (buffer == NULL)
-        buffer = char_to_string('\0');
-    buffer = ft_strjoin(buffer,temp);
-	while(i++ < BUFFER_SIZE && buffer[i] != '\n')
+    while(0 == a)
+    {
+        bytes_read += read(fd, temp, BUFFER_SIZE);
+	if (bytes_read == 0)
+		return(buffer);
+        if (buffer == NULL)
+            buffer = char_to_string('\0');
+        buffer = ft_strjoin(buffer,temp);
+        a = line_bytes(buffer,'\n');
+    }
+    line = malloc(bytes_read + 1);
+	while(i++ < bytes_read && buffer[i] != '\n')
 		line[i]= buffer[i];
 	buffer = ft_strchr(buffer,'\n');
     return (line);
 }
-
 #include <fcntl.h>
 int main() 
 {
