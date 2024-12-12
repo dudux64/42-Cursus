@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 12:53:27 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/12/07 14:41:26 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/12/11 20:04:10 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,30 +23,64 @@ size_t	ft_strlen(const char *c)
         i++;
     return (i);
 }
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
 
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
+}
+char	*ft_strdup(char *s)
+{
+	int		i;
+	char	*vec;
+
+	i = 0;
+	vec = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (vec == NULL)
+		return (NULL);
+	while (s[i])
+	{
+		vec[i] = s[i];
+		i++;
+	}
+	vec[i] = '\0';
+	return (vec);
+}
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-    int		size;
-    int		i;
-    int		j;
-    char	*str;
+	char	*vec;
+	int		i;
+	int		j;
 
-    if (!s1 || !s2)
-        return (NULL);
-    size = ft_strlen(s1) + ft_strlen(s2);
-    str = (char *)malloc((size + 1) * sizeof(char));
-    if (!str)
-        return (NULL);
-    i = 0;
-    j = 0;
-    while (s1[i] != 0)
-    {
-        str[i] = s1[i];
-        i++;
-    }
-    while (s2[j] != 0)
-        str[i++] = s2[j++];
-    str[i] = '\0';
-    return (str);
+	i = 0;
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	vec = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!vec)
+		return (NULL);
+	while (s1[i])
+	{
+		vec[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		vec[i] = s2[j];
+		j++;
+		i++;
+	}
+	vec[i] = '\0';
+	free(s1);
+	return (vec);
 }
