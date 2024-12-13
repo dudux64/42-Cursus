@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 12:53:27 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/12/11 20:04:10 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/12/13 20:07:56 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,24 @@ char	*ft_strchr(const char *s, int c)
 char	*ft_strdup(char *s)
 {
 	int		i;
-	char	*vec;
+	char	*line;
 
 	i = 0;
-	vec = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (vec == NULL)
+	line = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (line == NULL)
 		return (NULL);
 	while (s[i])
 	{
-		vec[i] = s[i];
+		line[i] = s[i];
 		i++;
 	}
-	vec[i] = '\0';
-	return (vec);
+	line[i] = '\0';
+	return (line);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*vec;
+	char	*line;
 	int		i;
 	int		j;
 
@@ -66,21 +66,21 @@ char	*ft_strjoin(char *s1, char *s2)
 	j = 0;
 	if (!s1 || !s2)
 		return (NULL);
-	vec = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!vec)
+	line = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!line)
 		return (NULL);
 	while (s1[i])
 	{
-		vec[i] = s1[i];
+		line[i] = s1[i];
 		i++;
 	}
 	while (s2[j])
 	{
-		vec[i] = s2[j];
+		line[i] = s2[j];
 		j++;
 		i++;
 	}
-	vec[i] = '\0';
+	line[i] = '\0';
 	free(s1);
-	return (vec);
+	return (line);
 }

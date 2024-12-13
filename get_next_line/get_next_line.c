@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:05:33 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/12/11 21:41:56 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/12/13 19:38:34 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ char *return_line(char *str)
     while (*ptr)
     {
         if (*ptr == '\n') 
-        {
+        {  
+            ptr++;
             *ptr = '\0';
             break;
         }
@@ -87,7 +88,7 @@ char *get_next_line(int fd)
     line = read_line(fd, buffer, temp);
     if (line == NULL)
     {
-        free(temp);
+        free(line);
         temp = NULL;
         return NULL;
     }
@@ -102,20 +103,15 @@ int main()
     const char *filePath = "exemplo.txt";
     int fd = open(filePath, O_RDONLY);
     char *line = get_next_line(fd);
-    char *line2 = get_next_line(fd);
-    char *line3 = get_next_line(fd);
-    char *line4 = get_next_line(fd);
-    printf("%s\n", line);
-    printf("%s\n", line2);
-    printf("%s\n", line3);
-    printf("%s\n", line4);
-    free(line);
-    free(line2);
-    free(line3);
-    free(line4);
+    
+    while (line)
+    {
+        printf("%s", line);
+        line = get_next_line(fd);
+    }
 
     close(fd);
     return 0;
 }
-*/
 
+*/
