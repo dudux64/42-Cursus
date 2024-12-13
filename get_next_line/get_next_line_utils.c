@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 12:53:27 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/12/13 20:07:56 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/12/13 20:51:55 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 size_t	ft_strlen(const char *c)
 {
-    size_t	i;
+	size_t	i;
 
-    if (!c)
-        return (0);
-    i = 0;
-    while (c[i] != '\0')
-        i++;
-    return (i);
+	if (!c)
+		return (0);
+	i = 0;
+	while (c[i] != '\0')
+		i++;
+	return (i);
 }
+
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
@@ -38,6 +39,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
+
 char	*ft_strdup(char *s)
 {
 	int		i;
