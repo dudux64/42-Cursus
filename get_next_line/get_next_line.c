@@ -6,7 +6,7 @@
 /*   By: cda-silv <cda-silv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:05:33 by cda-silv          #+#    #+#             */
-/*   Updated: 2024/12/13 20:48:04 by cda-silv         ###   ########.fr       */
+/*   Updated: 2024/12/21 15:23:42 by cda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*read_line(int fd, char *buffer, char *backup)
 		if (backup == NULL)
 			backup = ft_strdup("");
 		backup = ft_strjoin(backup, buffer);
-		if (ft_strchr(backup, '\n'))
+		if (ft_strchr(buffer, '\n'))
 			break ;
 	}
 	free(buffer);
@@ -83,7 +83,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	char		*buffer;
 
-	if (fd <= 0 || BUFFER_SIZE < 1)
+	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	buffer = (char *)malloc(sizeof(char *) * (BUFFER_SIZE + 1));
 	if (!buffer)
